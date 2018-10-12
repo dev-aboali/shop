@@ -1,2 +1,2 @@
 # shop
-E-commerce project 
+E-commerce project (In progress!)

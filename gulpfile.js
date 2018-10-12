@@ -4,10 +4,12 @@ const pug = require('gulp-pug');
 const connect = require('gulp-connect');
 const autoprefixer = require('gulp-autoprefixer');
 const sourcemaps = require('gulp-sourcemaps');
+const concat = require('gulp-concat');
 
 gulp.task('watch', function(){
      gulp.watch('src/**/*.scss', ['sass']);
      gulp.watch('src/**/*.pug', ['pug']);
+     gulp.watch('src/js/**/*.js', ['scripts']);
 });
 
 gulp.task('sass',  function(){
@@ -41,4 +43,10 @@ gulp.task('connect', function() {
     });
 });
 
-gulp.task('start', ['watch','connect']);
+gulp.task('scripts', function() {
+    return gulp.src(['./src/js/vendors/*.js','./src/js/partials/*.js'])
+      .pipe(concat('scripts.js'))
+      .pipe(gulp.dest('./assets/js'));
+});
+
+gulp.task('default', ['watch','connect']);
