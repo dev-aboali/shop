@@ -1,0 +1,28 @@
+header
+    .container
+        .logo
+            img(src="assets/img/logo.png", alt="logo")
+        .currency-dropdown
+            ul
+                each item in ["EUR","EGP","USD"]
+                    li
+                        a(href="#")=item
+        .lang-dropdown
+            ul
+                each item in ["AR","EN","SP"]
+                    li
+                        a(href="#")=item
+        .search
+            form.search-form(action="#")
+                input(type="text", name="search", placeholder="SEARCH")
+                span.icon.fa.fa-search
+        a(href="#").signin-btn SIGN IN
+        .cart
+            a(href="#")
+                span.icon.fa.fa-shopping-cart
+        .hamburger-menu
+            span.icon.fa.fa-bars
+            ul.hamburger-links
+                each item in ["Daily Deal","Blog"]
+                    li
+                        a(href="#")=item
